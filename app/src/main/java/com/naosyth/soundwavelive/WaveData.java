@@ -9,11 +9,14 @@ public class WaveData {
 
     public void addData(short[] newData) {
         int index = 0;
-        for (index=0; index<data.length - newData.length; index++) {
-            data[index] = data[index+newData.length];
+        float factor = 44100.0f/data.length;
+        int numNew = (int)(newData.length/factor);
+
+        for (index = 0; index < data.length-numNew; index++) {
+            data[index] = data[index+numNew];
         }
-        for (int i=0; i<newData.length; i++) {
-            data[index] = newData[i];
+        for (int i = 0; i < numNew; i++) {
+            data[index] = newData[(int)(i*factor)];
             index++;
         }
     }
