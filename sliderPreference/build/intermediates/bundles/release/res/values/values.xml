@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- From: file:/home/brandon/AndroidStudioProjects/SoundWaveLive/sliderPreference/src/main/res/values/attrs.xml -->
+    <eat-comment />
+
+    <declare-styleable name="SliderPreference">
+        <attr name="android:summary" />
+    </declare-styleable>
+
+</resources>

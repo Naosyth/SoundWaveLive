@@ -1,0 +1,38 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.naosyth.soundwavelive.SettingsActivity">
+
+    <PreferenceCategory android:title = "Colors">
+        <afzkl.development.colorpickerview.preference.ColorPickerPreference
+            android:defaultValue="0xFF000000"
+            android:key="background_color"
+            android:summary="Select a color for the background"
+            android:title="Background Color"/>
+
+        <afzkl.development.colorpickerview.preference.ColorPickerPreference
+            android:defaultValue="0xFFFFFFFF"
+            android:key="line_color"
+            android:summary="Select a color for the line"
+            android:title="Line Color"/>
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title = "Line">
+        <net.jayschwa.android.preference.SliderPreference
+            android:key="line_size"
+            android:title="Line Size"
+            android:summary="How thick the waveform should be"
+            android:defaultValue="0.5"
+            android:dialogMessage="Set how thick the line should be" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title = "Performance">
+        <net.jayschwa.android.preference.SliderPreference
+            android:key="frame_rate"
+            android:title="Frame Rate"
+            android:summary="How many frames per second should the background render at? More FPS = more battery drain!"
+            android:defaultValue="0.25"
+            android:dialogMessage="Set frame rate (1 - 60)" />
+    </PreferenceCategory>
+</PreferenceScreen>
