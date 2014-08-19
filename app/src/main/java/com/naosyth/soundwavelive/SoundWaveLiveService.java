@@ -48,7 +48,7 @@ public class SoundWaveLiveService extends WallpaperService {
         int lineColor;
         float maxLineSize = 10.0f;
         float lineSize;
-        int maxFrameRate = 24;
+        int maxFrameRate = 30;
         int frameRate;
 
         SharedPreferences preferences;
@@ -89,7 +89,6 @@ public class SoundWaveLiveService extends WallpaperService {
 
             handler.post(drawRunner);
 
-            data = new WaveData(44100/2);
             readData = new short[bufferSize/2];
         }
 
@@ -122,6 +121,7 @@ public class SoundWaveLiveService extends WallpaperService {
         public void onSurfaceChanged(SurfaceHolder holder, int format, int width, int height) {
             this.width = width;
             this.height = height;
+            data = new WaveData(width);
             super.onSurfaceChanged(holder, format, width, height);
         }
 
@@ -157,12 +157,11 @@ public class SoundWaveLiveService extends WallpaperService {
             canvas.drawColor(backgroundColor);
 
             final int halfHeight = height/2;
-            final int stepScale = wave.length/(width);
             final float scale = halfHeight/32768.0f;
             float startY, stopY;
             for (int i = 0; i < width-1; i++) {
-                startY = wave[stepScale*i]*scale+halfHeight;
-                stopY = wave[stepScale*(i+1)]*scale+halfHeight;
+                startY = wave[i]*scale+halfHeight;
+                stopY = wave[i+1]*scale+halfHeight;
                 canvas.drawLine(i, startY, i+1, stopY, paint);
             }
         }
