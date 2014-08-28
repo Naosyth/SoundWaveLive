@@ -2,10 +2,10 @@
 <merger version="2" >
 
     <dataSet config="main" >
-        <source path="/home/brandon/AndroidStudioProjects/SoundWaveLive/sliderPreference/src/main/assets" />
+        <source path="C:\Users\Naosyth\AndroidStudioProjects\SoundWaveLive\sliderPreference\src\main\assets" />
     </dataSet>
     <dataSet config="release" >
-        <source path="/home/brandon/AndroidStudioProjects/SoundWaveLive/sliderPreference/src/release/assets" />
+        <source path="C:\Users\Naosyth\AndroidStudioProjects\SoundWaveLive\sliderPreference\src\release\assets" />
     </dataSet>
 
 </merger>

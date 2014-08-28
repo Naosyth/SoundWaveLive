@@ -2,25 +2,25 @@
 <merger version="2" >
 
     <dataSet config="main" >
-        <source path="/home/brandon/AndroidStudioProjects/SoundWaveLive/sliderPreference/src/main/res" >
+        <source path="C:\Users\Naosyth\AndroidStudioProjects\SoundWaveLive\sliderPreference\src\main\res" >
             <file
-                path="/home/brandon/AndroidStudioProjects/SoundWaveLive/sliderPreference/src/main/res/values/attrs.xml"
+                name="slider_preference_dialog"
+                path="C:\Users\Naosyth\AndroidStudioProjects\SoundWaveLive\sliderPreference\src\main\res\layout\slider_preference_dialog.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                path="C:\Users\Naosyth\AndroidStudioProjects\SoundWaveLive\sliderPreference\src\main\res\values\attrs.xml"
                 qualifiers="" >
                 <declare-styleable name="SliderPreference" >
                     <attr name="android:summary" />
                 </declare-styleable>
             </file>
-            <file
-                name="slider_preference_dialog"
-                path="/home/brandon/AndroidStudioProjects/SoundWaveLive/sliderPreference/src/main/res/layout/slider_preference_dialog.xml"
-                qualifiers=""
-                type="layout" />
         </source>
-        <source path="/home/brandon/AndroidStudioProjects/SoundWaveLive/sliderPreference/build/generated/res/rs/debug" />
-        <source path="/home/brandon/AndroidStudioProjects/SoundWaveLive/sliderPreference/build/generated/res/generated/debug" />
+        <source path="C:\Users\Naosyth\AndroidStudioProjects\SoundWaveLive\sliderPreference\build\generated\res\rs\debug" />
+        <source path="C:\Users\Naosyth\AndroidStudioProjects\SoundWaveLive\sliderPreference\build\generated\res\generated\debug" />
     </dataSet>
     <dataSet config="debug" >
-        <source path="/home/brandon/AndroidStudioProjects/SoundWaveLive/sliderPreference/src/debug/res" />
+        <source path="C:\Users\Naosyth\AndroidStudioProjects\SoundWaveLive\sliderPreference\src\debug\res" />
     </dataSet>
 
 </merger>

@@ -5,13 +5,17 @@ import android.content.SharedPreferences;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.media.AudioFormat;
+import android.media.AudioManager;
 import android.media.AudioRecord;
+import android.media.AudioTrack;
 import android.media.MediaRecorder;
 import android.os.Handler;
 import android.preference.PreferenceManager;
 import android.service.wallpaper.WallpaperService;
 import android.util.Log;
 import android.view.SurfaceHolder;
+
+import java.util.Calendar;
 
 public class SoundWaveLiveService extends WallpaperService {
     private static final int RECORDER_SAMPLERATE = 44100;
@@ -20,11 +24,21 @@ public class SoundWaveLiveService extends WallpaperService {
     private static AudioRecord recorder;
     private static int bufferSize;
 
+    private AudioTrack at;
+    long lastTime;
+
     @Override
     public Engine onCreateEngine() {
         if (recorder == null) {
             bufferSize = AudioRecord.getMinBufferSize(RECORDER_SAMPLERATE, RECORDER_CHANNELS, RECORDER_AUDIO_ENCODING);
             recorder = new AudioRecord(MediaRecorder.AudioSource.MIC, RECORDER_SAMPLERATE, RECORDER_CHANNELS, RECORDER_AUDIO_ENCODING, bufferSize);
+
+            at=new AudioTrack(AudioManager.STREAM_MUSIC, 44100, AudioFormat.CHANNEL_OUT_MONO,
+                    AudioFormat.ENCODING_PCM_16BIT, 88200 /* 1 second buffer */,
+                    AudioTrack.MODE_STREAM);
+
+            lastTime = Calendar.getInstance().getTimeInMillis();
+
             Log.v("SoundWave", "Buffer Size " + bufferSize);
         }
 
@@ -89,7 +103,7 @@ public class SoundWaveLiveService extends WallpaperService {
 
             handler.post(drawRunner);
 
-            readData = new short[bufferSize/2];
+            readData = new short[bufferSize];
         }
 
         @Override
@@ -147,8 +161,28 @@ public class SoundWaveLiveService extends WallpaperService {
         }
 
         private void readAudio() {
-            recorder.read(readData, 0, bufferSize/2);
-            data.addData(readData);
+            short[] testData = new short[bufferSize/2];
+
+            recorder.read(testData, 0, testData.length);
+            data.addData(testData);
+
+            if (Calendar.getInstance().getTimeInMillis() - lastTime > 15000) {
+                //recorder.stop();
+                lastTime = Calendar.getInstance().getTimeInMillis();
+                at.write(data.getData(), 0, data.getData().length);
+                at.play();
+                Log.v("SoundWave", "Playing");
+                /*try {
+                    Thread.sleep(5000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }*/
+                //at.stop();
+                //recorder.startRecording();
+            }
+
+            /*recorder.read(readData, 0, bufferSize);
+            data.addData(readData);*/
         }
 
         private void drawWaveform(Canvas canvas) {

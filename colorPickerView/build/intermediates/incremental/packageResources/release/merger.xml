@@ -2,15 +2,39 @@
 <merger version="2" >
 
     <dataSet config="main" >
-        <source path="/home/brandon/AndroidStudioProjects/SoundWaveLive/colorPickerView/src/main/res" >
+        <source path="C:\Users\Naosyth\AndroidStudioProjects\SoundWaveLive\colorPickerView\src\main\res" >
             <file
-                path="/home/brandon/AndroidStudioProjects/SoundWaveLive/colorPickerView/src/main/res/values/strings.xml"
-                qualifiers="" >
-                <string name="app_name" >ColorPickerView
-                </string>
-            </file>
+                name="icon"
+                path="C:\Users\Naosyth\AndroidStudioProjects\SoundWaveLive\colorPickerView\src\main\res\drawable-hdpi\icon.png"
+                qualifiers="hdpi-v4"
+                type="drawable" />
             <file
-                path="/home/brandon/AndroidStudioProjects/SoundWaveLive/colorPickerView/src/main/res/values/attrs.xml"
+                name="icon"
+                path="C:\Users\Naosyth\AndroidStudioProjects\SoundWaveLive\colorPickerView\src\main\res\drawable-mdpi\icon.png"
+                qualifiers="mdpi-v4"
+                type="drawable" />
+            <file
+                name="dialog_color_picker"
+                path="C:\Users\Naosyth\AndroidStudioProjects\SoundWaveLive\colorPickerView\src\main\res\layout\dialog_color_picker.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="preference_preview_layout"
+                path="C:\Users\Naosyth\AndroidStudioProjects\SoundWaveLive\colorPickerView\src\main\res\layout\preference_preview_layout.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="dialog_color_picker"
+                path="C:\Users\Naosyth\AndroidStudioProjects\SoundWaveLive\colorPickerView\src\main\res\layout-land\dialog_color_picker.xml"
+                qualifiers="land"
+                type="layout" />
+            <file
+                name="dialog_color_picker"
+                path="C:\Users\Naosyth\AndroidStudioProjects\SoundWaveLive\colorPickerView\src\main\res\layout-large-land\dialog_color_picker.xml"
+                qualifiers="large-land-v4"
+                type="layout" />
+            <file
+                path="C:\Users\Naosyth\AndroidStudioProjects\SoundWaveLive\colorPickerView\src\main\res\values\attrs.xml"
                 qualifiers="" >
                 <declare-styleable name="ColorPickerView" >
                     <attr
@@ -36,7 +60,32 @@
                 </declare-styleable>
             </file>
             <file
-                path="/home/brandon/AndroidStudioProjects/SoundWaveLive/colorPickerView/src/main/res/values/styles.xml"
+                path="C:\Users\Naosyth\AndroidStudioProjects\SoundWaveLive\colorPickerView\src\main\res\values\ids.xml"
+                qualifiers="" >
+                <item
+                    name="dialog_color_picker_extra_layout_landscape"
+                    type="id"/>
+                <item
+                    name="color_panel_old"
+                    type="id"/>
+                <item
+                    name="color_picker_view"
+                    type="id"/>
+                <item
+                    name="preference_preview_color_panel"
+                    type="id"/>
+                <item
+                    name="color_panel_new"
+                    type="id"/>
+            </file>
+            <file
+                path="C:\Users\Naosyth\AndroidStudioProjects\SoundWaveLive\colorPickerView\src\main\res\values\strings.xml"
+                qualifiers="" >
+                <string name="app_name" >ColorPickerView
+                </string>
+            </file>
+            <file
+                path="C:\Users\Naosyth\AndroidStudioProjects\SoundWaveLive\colorPickerView\src\main\res\values\styles.xml"
                 qualifiers="" >
 
                 <style name="dialog_color_pciker_view_portrait" >
@@ -49,49 +98,7 @@ wrap_content
                 </style>
             </file>
             <file
-                path="/home/brandon/AndroidStudioProjects/SoundWaveLive/colorPickerView/src/main/res/values/ids.xml"
-                qualifiers="" >
-                <item
-                    name="dialog_color_picker_extra_layout_landscape"
-                    type="id"/>
-                <item
-                    name="preference_preview_color_panel"
-                    type="id"/>
-                <item
-                    name="color_panel_new"
-                    type="id"/>
-                <item
-                    name="color_panel_old"
-                    type="id"/>
-                <item
-                    name="color_picker_view"
-                    type="id"/>
-            </file>
-            <file
-                name="icon"
-                path="/home/brandon/AndroidStudioProjects/SoundWaveLive/colorPickerView/src/main/res/drawable-hdpi/icon.png"
-                qualifiers="hdpi-v4"
-                type="drawable" />
-            <file
-                name="dialog_color_picker"
-                path="/home/brandon/AndroidStudioProjects/SoundWaveLive/colorPickerView/src/main/res/layout-large-land/dialog_color_picker.xml"
-                qualifiers="large-land-v4"
-                type="layout" />
-            <file
-                path="/home/brandon/AndroidStudioProjects/SoundWaveLive/colorPickerView/src/main/res/values-v11/styles.xml"
-                qualifiers="v11" >
-
-                <style name="dialog_color_pciker_view_portrait" >
-                    <item name="android:layout_width">
-fill_parent
-                    </item>
-                    <item name="android:layout_height">
-wrap_content
-                    </item>
-                </style>
-            </file>
-            <file
-                path="/home/brandon/AndroidStudioProjects/SoundWaveLive/colorPickerView/src/main/res/values-large-v11/styles.xml"
+                path="C:\Users\Naosyth\AndroidStudioProjects\SoundWaveLive\colorPickerView\src\main\res\values-large-v11\styles.xml"
                 qualifiers="large-v11" >
 
                 <style name="dialog_color_pciker_view_portrait" >
@@ -104,31 +111,24 @@ wrap_content
                 </style>
             </file>
             <file
-                name="icon"
-                path="/home/brandon/AndroidStudioProjects/SoundWaveLive/colorPickerView/src/main/res/drawable-mdpi/icon.png"
-                qualifiers="mdpi-v4"
-                type="drawable" />
-            <file
-                name="preference_preview_layout"
-                path="/home/brandon/AndroidStudioProjects/SoundWaveLive/colorPickerView/src/main/res/layout/preference_preview_layout.xml"
-                qualifiers=""
-                type="layout" />
-            <file
-                name="dialog_color_picker"
-                path="/home/brandon/AndroidStudioProjects/SoundWaveLive/colorPickerView/src/main/res/layout/dialog_color_picker.xml"
-                qualifiers=""
-                type="layout" />
-            <file
-                name="dialog_color_picker"
-                path="/home/brandon/AndroidStudioProjects/SoundWaveLive/colorPickerView/src/main/res/layout-land/dialog_color_picker.xml"
-                qualifiers="land"
-                type="layout" />
+                path="C:\Users\Naosyth\AndroidStudioProjects\SoundWaveLive\colorPickerView\src\main\res\values-v11\styles.xml"
+                qualifiers="v11" >
+
+                <style name="dialog_color_pciker_view_portrait" >
+                    <item name="android:layout_width">
+fill_parent
+                    </item>
+                    <item name="android:layout_height">
+wrap_content
+                    </item>
+                </style>
+            </file>
         </source>
-        <source path="/home/brandon/AndroidStudioProjects/SoundWaveLive/colorPickerView/build/generated/res/rs/release" />
-        <source path="/home/brandon/AndroidStudioProjects/SoundWaveLive/colorPickerView/build/generated/res/generated/release" />
+        <source path="C:\Users\Naosyth\AndroidStudioProjects\SoundWaveLive\colorPickerView\build\generated\res\rs\release" />
+        <source path="C:\Users\Naosyth\AndroidStudioProjects\SoundWaveLive\colorPickerView\build\generated\res\generated\release" />
     </dataSet>
     <dataSet config="release" >
-        <source path="/home/brandon/AndroidStudioProjects/SoundWaveLive/colorPickerView/src/release/res" />
+        <source path="C:\Users\Naosyth\AndroidStudioProjects\SoundWaveLive\colorPickerView\src\release\res" />
     </dataSet>
 
 </merger>

@@ -1,34 +1,29 @@
 package com.naosyth.soundwavelive;
 
-import android.os.SystemClock;
-
 public class WaveData {
     private short[] data;
-
-    private long lastFrameTime = SystemClock.elapsedRealtime();
 
     public WaveData(int sizeInShorts) {
         data = new short[sizeInShorts];
     }
 
     public void addData(short[] newData) {
-        long currentTime = SystemClock.elapsedRealtime();
-        long dt = currentTime - lastFrameTime;
-        lastFrameTime = currentTime;
+        float seconds = 5f;
 
-        int index = 0;
-        float factor = 44100.0f/data.length;
-        int numNew = (int)(newData.length/factor);
+        int halfLength = newData.length/2;
 
-        numNew = Math.min((int)(newData.length*(dt/1000.0f)), newData.length)/5;
-        factor = newData.length/numNew;
+        int numSamples = (int)(11025*seconds)/halfLength;
+        int numShorts = (halfLength) * numSamples;
+        float factor = numShorts/data.length;
+        int numNew = (int)((halfLength)/factor);
 
-        for (index = 0; index < data.length-numNew; index++) {
-            data[index] = data[index+numNew];
+        int offset = data.length - numNew;
+        for (int i = 0; i < offset; i++) {
+            data[i] = data[i+numNew];
         }
+
         for (int i = 0; i < numNew; i++) {
-            data[index] = newData[(int)(i*factor)];
-            index++;
+            data[offset + i] = newData[halfLength + (int)(i*factor)];
         }
     }
 

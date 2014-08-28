@@ -33,6 +33,6 @@
             android:title="Frame Rate"
             android:summary="How many frames per second should the background render at? More FPS = more battery drain!"
             android:defaultValue="0.25"
-            android:dialogMessage="Set frame rate (1 - 60)" />
+            android:dialogMessage="Set frame rate (1 - 24)" />
     </PreferenceCategory>
 </PreferenceScreen>
